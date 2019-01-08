@@ -14,7 +14,7 @@ auth_info = json.dumps({"password": "<PASSWORD>", "user_name": "<USERNAME>", "cu
 auth_response = json.loads(s.post(session_url, data=auth_info).text)
 s.headers.update({"Auth-Token": "%s" % auth_response['data']['token']})
 api_url = 'https://api.dynect.net'
-recordnumber = s.get(api_url + '/REST/ARecord/dlvr0.net/%s' % fqdn).json()
+recordnumber = s.get(api_url + '/REST/ARecord/<DOMAINNAME>/%s' % fqdn).json()
 print recordnumber
 arecord = s.get(api_url + recordnumber['data'][0]).json()['data']['rdata']['address']
 print arecord
