@@ -1,2 +1,2 @@
 # dynipupdate
-A python script to update IP of local with DYN DNS. 
+A python script to update local IP address with DYN DNS. 
